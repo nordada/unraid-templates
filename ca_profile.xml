@@ -1,0 +1,16 @@
+<CommunityApplications>
+  <!-- Required profile -->
+  <Profile>
+    This repository hosts the Community Applications templates for nordada's Unraid apps - each is a separate project with its own GitHub repo, Docker image, and support/issues page (linked from its own template below); this repository only holds the template XML files that describe them to Community Applications.
+
+    **Domestique** (`domestique.xml`): a boutique PVR for bike racing - watches a downloads folder and automatically files finished race downloads into a clean, Plex-ready library. See https://github.com/nordada/domestique.
+
+    **Paddock** (`paddock.xml`): a boutique PVR for racing events generally (cycling and Formula 1 ship built in, more to come) - same idea as Domestique, generalized beyond one sport via a configurable "event profile". See https://github.com/nordada/paddock.
+
+    For support or to report an issue with either app, please use that app's own repository's GitHub Issues, not this one.
+  </Profile>
+  <!-- Icon -->
+  <Icon>https://raw.githubusercontent.com/nordada/paddock/main/public/icon.png</Icon>
+  <!-- Web page -->
+  <WebPage>https://github.com/nordada/unraid-templates</WebPage>
+</CommunityApplications>
