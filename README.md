@@ -27,3 +27,13 @@ live in are private, which rules out their own raw URLs.
 `/mnt/user/appdata/<app>/icon.png` and `file:///mnt/user/appdata/<app>/icon.png`
 were in use on Alcazar and both rendered the "?" fallback, because the browser,
 not the server, is what fetches the value.
+
+**Why this is worth doing rather than leaving as a cosmetic "?".** A "?" tile
+costs nothing while Unraid's own fallback asset,
+`dynamix.docker.manager/images/question.png`, is present. When that asset is
+missing the same tile 404s, and the webgui's client-side retry loop turns one
+open Dashboard tab into thousands of nginx errors a minute, mirrored into
+syslog, against a 128 MB RAM-backed `/var/log`. That filled the filesystem on
+Tower in July 2026 and again on Alcazar in September. Setting the label removes
+the demand for the fallback entirely, which is the fix that survives a reboot;
+restoring the asset does not, because it lives in a RAM overlay.
